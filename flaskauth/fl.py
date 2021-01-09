@@ -13,11 +13,13 @@ def unauthorized():
     return make_response(jsonify({'error': 'Unauthorized access'}), 401)
    
    
+#error on that area
 
 @app.route('/tasks', methods=['GET'])
 @auth.login_required
 def get_tasks():
     return jsonify({'tasks': tasks})
+
     
 #curl -u saireddy:saireddypassword -i http://localhost:5000/tasks
     
